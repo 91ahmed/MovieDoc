@@ -1,0 +1,131 @@
+article
+    div(class="info")
+        span(class="add-favorite")
+            a(href="javascript:void(0);" data-title="Add to favorites" data-title-added="Added to favorites list")
+                i(class="icon icon-heart")
+        span
+            a(href="#productid1" class="mfp-open" data-title="Quick wiew")
+                i(class="icon icon-eye")
+
+    div(class="btn btn-add")
+        i(class="icon icon-cart")
+
+    div(class="figure-grid")
+        span(class="label label-danger") -50%
+        div(class="image")
+            a(href="#productid1" class="mfp-open")
+                img(src="assets/images/product-8.png" alt="" width="360")
+
+        div(class="text")
+            h2(class="title h4")
+                a(href="product.html") Iron set
+
+            sub $ 1999,-
+            sup $ 1499,-
+            span(class="description clearfix") Gubergren amet dolor ea diam takimata consetetur facilisis blandit et aliquyam lorem ea duo labore diam sit et consetetur nulla
+
+
+
+
+each val in data
+    // product-item
+    div(class="col-md-12")
+        article
+            div(class="info")
+                span(class="add-favorite")
+                    a(href="javascript:void(0);" data-title="Add to favorites" data-title-added="Added to favorites list")
+                        i(class="icon icon-heart")
+                span
+                    a(href="#productid1" class="mfp-open" data-title="Quick wiew")
+                        i(class="icon icon-eye")
+
+            div(class="btn btn-add")
+                i(class="icon icon-cart")
+            div(class="figure-grid")
+                div(class="image")
+                    a(href="#productid1" class="mfp-open")
+                        img(src="https://www.themoviedb.org/t/p/w500"+val.poster_path alt="" width="360")
+                div(class="text")
+                    h2(class="title h4")
+                        a(href="product.html")=val.title
+                    sub $ 1499,-
+                    sup $ 1099,-
+                    span(class="description clearfix")=val.overview
+
+
+
+
+
+
+
+
+            //  Product info popup - quick view
+            div(class="popup-main mfp-hide" id="productid1")
+
+                // product popup
+                div(class="product")
+
+                    // popup-title
+                    div(class="popup-title")
+                        div(class="h1 title")
+                            Headphones Wireless
+                            small product category
+
+                    // product gallery
+                    div(class="owl-product-gallery")
+                        img(src="assets/images/product-10.png" alt="" width="640")
+                        img(src="assets/images/product-10a.png" alt="" width="640")
+
+                    // product-popup-info
+                    div(class="popup-content")
+                        div(class="product-info-wrapper")
+                            div(class="row")
+
+                                // left-column
+
+                                div(class="col-sm-6")
+                                    div(class="info-box")
+                                        strong Maifacturer
+                                        span Brand name
+
+                                    div(class="info-box")
+                                        strong Materials
+                                        span Wood, Leather, Acrylic
+
+                                    div(class="info-box")
+                                        strong Availability
+                                        span 
+                                            i(class="fa fa-check-square-o") in stock
+
+                                div(class="col-sm-6")
+                                    div(class="info-box")
+                                        strong Available Colors
+                                        div(class="product-colors clearfix")
+                                            span(class="color-btn color-btn-red")
+                                            span(class="color-btn color-btn-blue checked")
+                                            span(class="color-btn color-btn-green")
+                                            span(class="color-btn color-btn-gray")
+                                            span(class="color-btn color-btn-biege")
+
+                                    div(class="info-box")
+                                        strong Choose size
+                                        div(class="product-colors clearfix")
+                                            span(class="color-btn color-btn-biege") S
+                                            span(class="color-btn color-btn-biege checked") M
+                                            span(class="color-btn color-btn-biege") XL
+                                            span(class="color-btn color-btn-biege") XXL
+                    // product-popup-footer
+                    div(class="popup-table")
+                        div(class="popup-cell")
+                            div(class="price")
+                                span(class="h3") $ 1999,00 
+                                    small $ 2999,00
+
+                        div(class="popup-cell")
+                            div(class="popup-buttons")
+                                a(href="product.html")
+                                    span class="icon icon-eye") 
+                                    span class="hidden-xs") View more
+                                a(href="javascript:void(0");")
+                                    span(class="icon icon-cart") 
+                                    span(class="hidden-xs") Buy

@@ -1,0 +1,125 @@
+extends layout/layout.pug
+
+block title
+    = title
+
+block content
+
+    // Product
+    section(class="product")
+        div(class="main")
+            div(class="container")
+                div(class="row product-flex")
+
+                    // product flex is used only for mobile order 
+                    // on mobile 'product-flex-info' goes bellow gallery 'product-flex-gallery' 
+                    div(class="col-md-4 col-sm-12 product-flex-info")
+                        div(class="clearfix")
+
+                            // product-title 
+                            h1(class="title" data-title=title)=title
+                            
+                            div(class="clearfix")
+
+                                // price wrapper
+                                div(class="price")
+                                    span(class="h3 mvyear2" data-year=release_date)
+                                        small(style="text-decoration:none;font-size:14px;")='Rate: '+vote_average+'/10'
+                                
+                                hr
+
+                                // info-box
+                                div(class="info-box")
+                                    span 
+                                        strong=tagline
+
+                                hr
+
+                                // info-box 
+                                div(class="info-box")
+                                    span 
+                                        strong Genres
+                                    div(class="product-colors clearfix")
+                                        each val in genres
+                                            span(class="color-btn color-btn-biege" Style="width:auto;border-radius:10%;padding: 0 5px;margin-bottom:5px;")=val.name
+                                
+                                hr
+                                
+                                form(action="/trailer/"+movie_id+"/movie" method="GET" id="movie_trailer_form")
+                                    button(type="submit" data-toggle="modal" data-target="#trailer-modal" class="btn-watch-video fancybox fancybox.iframe")
+                                        | Watch Trailer
+                                        i(class="fa fa-play")                            
+                                hr
+                                
+                                table(class='table' style='font-size:14px;')
+                                    tbody
+                                        tr
+                                            td(class="t-title") status
+                                            td= status
+                                        tr
+                                            td(class="t-title") original title
+                                            td= original_title
+                                        tr
+                                            td(class="t-title") released
+                                            td= release_date
+                                        tr
+                                            td(class="t-title") spoken languages
+                                            td
+                                                each lang in spoken_languages
+                                                    span(class="badge badge-light")=lang.english_name
+                                        tr
+                                            td(class="t-title") revenue
+                                            td="$ "+revenue
+                                        tr
+                                            td(class="t-title") budget
+                                            td="$ "+budget
+
+                    // product item gallery
+                    div(class="col-md-8 col-sm-12 product-flex-gallery")
+
+                        // product gallery
+                        div(class="owl-product-gallery open-popup-gallery" style="text-align:center !important;margin-bottom:20px;")
+                            if(poster_path != null)
+                                a(href="https://www.themoviedb.org/t/p/w500/"+poster_path)
+                                    img(src="https://www.themoviedb.org/t/p/w500/"+poster_path+"" alt="" style="width:auto !important;")
+                            if(poster_path2 != null)
+                                a(href="https://www.themoviedb.org/t/p/w500/"+poster_path2)
+                                    img(src="https://www.themoviedb.org/t/p/w500/"+poster_path2+"" alt="" style="width:auto !important;")
+        
+        // product-info 
+        div(class="info")
+            div(class="container")
+                div(class="row")
+
+                    div(class="col-md-9")
+                        ul(class="nav nav-tabs" role="tablist")
+                            li(role="presentation" class="active")
+                                a(href="#overview" aria-controls="overview" role="tab" data-toggle="tab")
+                                    span Overview
+
+                        // tab-panes
+                        div(class="tab-content")
+
+                            // tab #1
+                            div(role="tabpanel" class="tab-pane active" id="overview")
+                                div(class="content")
+                                    h3 The Summary
+                                    p=overview
+                                    hr
+                                    h3="Cast & Crew"
+                                    div(class="crew-content text-center" data-id=movie_id  data-type="movie")
+                                        // Cast and Crew
+                                        
+
+
+        div(class="modal" id="trailer-modal" tabindex="-1" role="dialog")
+            div(class="modal-dialog" role="document")
+                div(class="modal-content")
+                    div(class="modal-header")
+                        h5(class="modal-title") Trailers
+                        button(type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-trailer")
+                            span(aria-hidden="true") &times;
+                    div(class="modal-body")
+                        div(class="trailer-modal")
+                    div(class="modal-footer")
+                        button(type="button" class="btn btn-secondary" data-dismiss="modal" id="close-trailer") Close

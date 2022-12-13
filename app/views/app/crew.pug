@@ -1,0 +1,15 @@
+each val in data
+    // Cast
+    div(class="crew-card")
+        div(class="card")
+            if val.profile_path == null || val.profile_path == ''
+                img(src="/assets/images/cast.jpg" style="width:100%;")
+            else
+                a(href="https://www.themoviedb.org/t/p/w500"+val.profile_path class="movie-img" style="width:100%;")
+                    img(src="https://www.themoviedb.org/t/p/w500"+val.profile_path class="card-img-top" style="width:100%;")
+            
+            div(class="card-body" style="padding-top:4px")
+                h5(class="card-title crew-title" style="margin-bottom:0;")=val.name
+                p(class="card-text")
+                    span(class="crew-department")=val.known_for_department
+                    small(class="crew-character")=val.character

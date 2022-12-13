@@ -1,0 +1,150 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+        
+        // Mobile Web-app fullscreen
+        meta(name="apple-mobile-web-app-capable" content="yes")
+        meta(name="mobile-web-app-capable" content="yes")
+
+        // Title
+        title
+            block title
+
+        // CSS bundle
+        link(rel="stylesheet" media="all" href="/css/bootstrap.css")
+        link(rel="stylesheet" media="all" href="/css/animate.css")
+        link(rel="stylesheet" media="all" href="/css/font-awesome.css")
+        link(rel="stylesheet" media="all" href="/css/linear-icons.css")
+        link(rel="stylesheet" media="all" href="/css/magnific-popup.css")
+        link(rel="stylesheet" media="all" href="/css/owl.carousel.css")
+        link(rel="stylesheet" media="all" href="/css/ion-range-slider.css")
+        link(rel="stylesheet" media="all" href="/css/loader.css")
+        link(rel="stylesheet" media="all" href="/css/theme.css")
+
+        // Google fonts
+        link(href="https://fonts.googleapis.com/css?family=Poppins:400,500,600" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet")
+
+        // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+        //[if lt IE 9]><!
+        script(src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js")
+        script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
+        //<![endif]
+    body
+        div(class="page-loader")
+        div(class="loader")
+        div(class="menu-overlay")
+        div(class="wrapper")
+
+            // Navigation
+            nav
+                div(class="clearfix")
+                    a(href="/" class="logo" style="top:auto !important")
+                        img(src="/assets/images/logo.png" alt="")
+
+                    //  Top navigation
+                    div(class="navigation navigation-top clearfix")
+                        ul
+                            // add active class for current page
+                            li(class="left-side")
+                                a(href="/" class="logo-icon")
+                                    img(src="/assets/images/icon.png" alt="Alternate Text")
+
+                            li(class="left-side")
+                                a(href="/") Movies
+                            li(class="left-side")
+                                a(href="/tv") Tv Shows
+                            li
+                                a(href="/auth")
+                                    i(class="icon icon-user")
+                            li
+                                a(href="javascript:void(0);" class="open-cart")
+                                    i(class="icon icon-heart")
+
+                    div(class="navigation navigation-main")
+                        a(href="#" class="open-menu")
+                            i(class="icon icon-menu")
+
+                        div(class="floating-menu")
+                            // mobile toggle menu trigger
+                            div(class="close-menu-wrapper")
+                                span(class="close-menu")
+                                    i(class="icon icon-cross")
+                            ul
+                                li
+                                    a(href="/") Movies
+                                li
+                                    a(href="/tv") Tv shows
+                            
+            block content
+
+            br
+
+            //footer(style="padding:0 20px !important;height:50px;line-height: 50px;")
+            footer
+                // footer links
+                div(class="footer-links")
+                    div(class="row")
+
+                        div(class="col-sm-4 col-md-2")
+                            h5 Quick links
+                            ul
+                                li
+                                    a(href="/about") About
+                                li
+                                    a(href="/contact") Contact us
+
+                        div(class="col-sm-4 col-md-2")
+                            h5 Customer service
+                            ul
+                                li
+                                    a(href="javascript:{}")
+                                        | Help Center
+
+                        div(class="col-sm-12 col-md-4")
+                            h5
+                                | Sign up for our newsletter
+                            p
+                                i 
+                                    | Add your email address to sign up for our monthly emails and to receive promotional offers.
+                            
+                            div(class="form-group form-newsletter")
+                                input(class="form-control" type="text" name="email" value="" placeholder="Email address")
+                                input(type="submit" class="btn btn-main btn-sm" value="Subscribe")
+
+                // footer social
+                div(class="footer-social" style="padding:0;")
+                    div(class="row")
+                        div(class="col-sm-6")
+                            a(href="https://91ahmed.github.io/" target="_blank")
+                                | &copy; developed by ahmedhassan
+
+                        div(class="col-sm-6 links")
+                            ul
+                                li
+                                    a(href="#")
+                                        i(class="fa fa-facebook")
+                                li
+                                    a(href="#")
+                                        i(class="fa fa-twitter")
+                                li
+                                    a(href="#")
+                                        i(class="fa fa-google-plus")
+                                li
+                                    a(href="#")
+                                        i(class="fa fa-instagram")
+                                li
+                                    a(href="#")
+                                        i(class="fa fa-youtube")
+
+        // JS files
+        script(src="/js/jquery.min.js")
+        script(src="/js/jquery.bootstrap.js")
+        script(src="/js/jquery.magnific-popup.js")
+        script(src="/js/jquery.owl.carousel.js")
+        script(src="/js/jquery.ion.rangeSlider.js")
+        script(src="/js/main.js")
+        script(src="/js/script.js")

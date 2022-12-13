@@ -1,0 +1,105 @@
+extends layout/layout.pug
+
+block title
+    | Contact
+
+block content
+
+    // Section
+    section(class="main-header")
+        header
+            div(class="container text-center")
+                h1(class="h2 title") Contact Us
+                ol(class="breadcrumb breadcrumb-inverted")
+                    li
+                        a(href="/")
+                            span(class="icon icon-home")
+                    li
+                        a(class="active" href="/about") Contact
+
+    section(class="contact")
+
+        // Goolge map
+        div(id="map" style="position: relative; overflow: hidden;")
+            div(style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);")
+                div(class="gm-err-container")
+                    div(class="gm-err-content")
+                        div(class="gm-err-icon")
+                            img(src="https://maps.gstatic.com/mapfiles/api-3/images/icon_error.png" draggable="false" style="user-select: none;")
+                            div(class="gm-err-title")
+                                | Oops! Something went wrong.)
+                            div(class="gm-err-message")
+                                | This page didn't load Google Maps correctly. See the JavaScript console for technical details.
+
+        div(class="container")
+
+            div(class="row")
+
+                div(class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1")
+
+                    div(class="contact-block")
+
+                        div(class="contact-info")
+                            div(class="row")
+                                div(class="col-sm-4")
+                                    figure(class="text-center")
+                                        span(class="icon icon-map-marker")
+                                        figcaption
+                                            strong Where are we?
+                                            span 200 12th Ave, New York, <br)NY 10001, USA 
+
+                                div(class="col-sm-4")
+                                    figure(class="text-center")
+                                        span(class="icon icon-phone")
+                                        figcaption
+                                            strong Call us
+                                            span
+                                                strong T 
+                                                    | +1 222 333 4444 <br)
+                                                strong F 
+                                                    | +1 222 333 5555
+
+                                div(class="col-sm-4")
+                                    figure(class="text-center")
+                                        span(class="icon icon-clock")
+                                        figcaption
+                                            strong Working hours
+                                            span
+                                                strong Mon - Sat: 10 am - 6 pm
+                                                br
+                                                strong Sun 12pm - 2 pm
+                                            
+                        div(class="contact-info")
+                            div(class="row")
+                                div(class="col-md-offset-1 col-md-10 text-center")
+                                    h2(class="title") Send an email
+                                    p
+                                        | Thanks for your interest in Mobel Theme. We believe in creativity as one of the major forces of progress.
+                                        | Please use this form if you have any questions about our products and we'll get back with you very soon.
+
+                                    div(class="contact-form-wrapper active")
+
+                                        a(class="btn btn-primary open-form" data-text-open="Contact us via form" data-text-close="Close form") Close form
+
+                                        div(class="contact-form clearfix" style="display: block;")
+                                            form(action="#" method="post")
+                                                div(class="row")
+                                                    div(class="col-md-6")
+                                                        div(class="form-group")
+                                                            input(type="text" value="" class="form-control" placeholder="Your name" required="required")
+
+                                                    div(class="col-md-6")
+                                                        div(class="form-group")
+                                                            input(type="email" value="" class="form-control" placeholder="Your email" required="required")
+
+                                                    div(class="col-md-12")
+
+                                                        div(class="form-group")
+                                                            input(type="text" value="" class="form-control" placeholder="Subject" required="required")
+
+                                                    div(class="col-md-12")
+                                                        div(class="form-group")
+                                                            textarea(class="form-control" placeholder="Your message" rows="10")
+
+                                                    div(class="col-md-12 text-center")
+                                                        input(type="submit" class="btn btn-main" value="Send message")

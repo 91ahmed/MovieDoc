@@ -1,0 +1,4 @@
+each val in data
+    h4(class="trailer-title" style="display:inline-block;")=val.name
+    div(class="videoWrapper mt-2")
+        iframe(style="width:100%;" src="//www.youtube.com/embed"+'/'+val.key allowfullscreen frameBorder="0")

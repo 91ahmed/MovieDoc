@@ -1,0 +1,42 @@
+each val in data
+    // product-item
+    div(class="col-xs-6 col-sm-4 col-lg-3")
+        article
+            div(class="info")
+                span(class="add-favorite")
+                    a(href="javascript:void(0);" data-title="Add to favorites" data-title-added="Added to favorites list")
+                        i(class="icon icon-heart")
+                span
+                    a(href="preview/tv/"+val.id class="mfp-open" data-title="Preview")
+                        i(class="icon icon-eye")
+
+            div(class="figure-grid")
+                span(class="label label-danger")='Rate:  '+val.vote_average
+                div(class="image")
+                    a(href="/preview/tv/"+val.id class="mfp-open")
+                        div(class="movie-poster" style='background-image:url('+'https://www.themoviedb.org/t/p/w500'+val.poster_path+')')
+                        //img(src="https://www.themoviedb.org/t/p/w500"+val.poster_path alt="" width="360")
+
+                div(class="text")
+                    h2(class="title h4")
+                        a(href="/preview/tv/"+val.id)=val.name
+
+                    sup(class="mvyear" data-year=val.first_air_date)    
+                    span(class="description clearfix")=val.overview
+
+
+script(src="/js/jquery.min.js")
+script.
+    $('.mvyear').each(function(){
+        var year = $(this).attr('data-year');
+        year = getYearFromDate(year);
+        $(this).html(year);
+    });
+
+    function getYearFromDate (date)
+    {
+        var date = date;
+        var arr1 = date.split('-');
+
+        return arr1[0];
+    }

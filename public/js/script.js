@@ -15,7 +15,7 @@ $(function(){
     var dt = new Date();
     var current_year = dt.getFullYear();
 
-    for(var year=1900; year <= current_year; year++){
+    for(var year = current_year; year >= 1930; year--){
         $('.movie-year').append("<option value='"+year+"'>"+year+"</option>")
     }
 });

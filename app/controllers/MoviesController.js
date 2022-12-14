@@ -224,8 +224,8 @@ exports.previewMovie = (req, res) =>
 
 exports.previewTv = (req, res) =>
 {
-    var movie_id = req.params.id;
-    var url = 'https://api.themoviedb.org/3/tv/'+movie_id+'?api_key=e18d5fbe1b2cacaae460cad583eda96b&append_to_response=videos&include_adult=false&adult=false';
+    var tv_id = req.params.id;
+    var url = 'https://api.themoviedb.org/3/tv/'+tv_id+'?api_key=e18d5fbe1b2cacaae460cad583eda96b&append_to_response=videos&include_adult=false&adult=false';
     
     axios.get(url)
         .then(function (response) {

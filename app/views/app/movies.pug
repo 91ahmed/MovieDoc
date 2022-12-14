@@ -61,25 +61,25 @@ block content
 
                     div(class="sort-bar clearfix")
 
-                        div(class="sort-results pull-left")
+                        div(class="sort-results pull-left" style="margin:0 5px;")
                             // Showing result per page
                             select(class="movie-page" name="page")
-                                option(value="1" selected) Pages
+                                option(value="1" selected) - Pages -
 
                             // Items counter
-                            span Pages
+                            // span Pages
 
                         div(class="sort-results pull-left")
                             form(action="/movies/api" method="GET" class="ajax-movies" style="margin:0 5px;")
                                 // Year options
                                 select(name="year" class="movie-year")
-                                    option(value="" selected) Year
-                                
+                                    option(value="" selected) - Year -
+                                 
                                 // Items counter
-                                span(style="margin:0 5px;") Year
+                                // span(style="margin:0 5px;") Year
 
                         div(class="sort-options pull-right")
-                            span(class="hidden-xs") Sort by
+                            // span(class="hidden-xs") Sort by
                             // Sort options
                             select(name="sort_by")
                                 option(value="popularity.desc" selected) - Sort by -
@@ -110,12 +110,12 @@ block content
 
                         div(class="sort-options pull-right" style="margin:0 5px;")
                             form(action="/movies/api" method="GET" class="ajax-movies")
-                                span(class="hidden-xs") Genre
+                                // span(class="hidden-xs") Genre
                                 // Genre options
-                                select(name="sort_by")
+                                select(name="genres")
                                     option(value="" selected) - Genre -
                                         each val in genre
-                                            option(id="genre"+val.id name="genres[]" value=val.id)=val.name
+                                            option(id="genre"+val.id value=val.id)=val.name
 
                     div(class="row row-clean api-movies-content" data-movie="/movies/api")
                         // Get ajax content here

@@ -1,8 +1,11 @@
 ﻿@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 * {
     outline: none;
 }
-
+/*#022441*/
 body {
     background-color: #cfcfcf;
     font-family: "Open Sans", sans-serif;
@@ -673,7 +676,7 @@ header .text p:last-child {
 .main-header header {
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: #3a3a3a;/*#787878;*/
+    background-color: #022441;/*#3a3a3a;/*#787878;*/
     background-size: cover;
     background-position: center;
 }
@@ -769,9 +772,32 @@ nav .logo {
     border: 0;
     z-index: 10;
 }
+nav .logo span{
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 77px;
+    color: #022441;
+    font-family: 'Fredoka One', cursive;
+}
+nav .logo span i{
+    color: #4786CB;/*#21C8F5;*/
+    font-style: normal !important;
+}
 
 nav .logo img {
     height: 55px;
+}
+
+@media (max-width: 992px) {
+    nav .logo img {
+        width: auto;
+        height: auto;
+    }
+    nav .logo span{
+        line-height: 59px;
+        padding: 0 15px;
+        font-size: 20px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -783,10 +809,6 @@ nav .logo img {
         -o-transform: translateX(-50%);
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
-    }
-    nav .logo img {
-        width: auto;
-        height: auto;
     }
 }
 
@@ -1157,7 +1179,7 @@ nav .navigation-main .navbar-dropdown .navbar-box ul > li:last-child > a {
         top: 0;
         right: 0;
         left: auto;
-        background-color: #2e73bb;
+        background-color: #4786CB;/*#2e73bb;*/
         -moz-transform: translate3d(0, -100%, 0);
         -ms-transform: translate3d(0, -100%, 0);
         -o-transform: translate3d(0, -100%, 0);
@@ -1326,7 +1348,7 @@ nav .navigation-main .navbar-dropdown .navbar-box ul > li:last-child > a {
     nav .navigation-main .floating-menu > ul > li > a {
         color: white;
         display: block;
-        border-bottom: 1px solid #3078c3;
+        border-bottom: 1px solid #19aad1;
         padding: 15px 0;
         position: relative;
     }
@@ -1362,7 +1384,7 @@ nav .navigation-main .navbar-dropdown .navbar-box ul > li:last-child > a {
     }
     nav .navigation-main .close-menu-wrapper {
         height: 50px;
-        border-bottom: 1px solid #3078c3;
+        border-bottom: 1px solid #19aad1;
     }
     nav .navigation-main .close-menu {
         cursor: pointer;
@@ -2300,14 +2322,15 @@ nav .cart-wrapper.open {
 }
 
 .products article {
-    background-color: white;
+    background-color: transparent;
     position: relative;
     transition: all 0.3s;
-    margin-bottom: 1px;
+    /*margin-bottom: 1px;*/
     overflow: hidden;
     border: 1px solid #eeeeee;
-    margin-left: -1px;
-    margin-top: -2px;
+    margin-bottom: 10px !important;
+    /*margin-left: -1px;
+    margin-top: -2px;*/
 }
 
 .products article .label {
@@ -2323,11 +2346,12 @@ nav .cart-wrapper.open {
 
 .products article .text {
     width: 100%;
-    padding: 10px;
+    padding: 0;
 }
-
+.products article .text,
+.products article .text a,
 .products article .text a:hover {
-    color: #333;
+    color: #022441 !important;
 }
 
 .products article .text .title {
@@ -2353,6 +2377,100 @@ nav .cart-wrapper.open {
 .products article .image {
     overflow: hidden;
     height: auto;
+    /*margin-bottom: 10px !important;*/
+}
+.movie-tv-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-box-shadow: inset -5px -50px 100px -15px #000000;
+    -moz-box-shadow: inset -5px -50px 100px -15px #000000;
+    -ms-box-shadow: inset -5px -50px 100px -15px #000000;
+    -o-box-shadow: inset -5px -50px 100px -15px #000000;
+    box-shadow: inset -5px -50px 100px -15px #000000;
+}
+.movie-tv-info{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 30px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+.movie-tv-title{
+    font-size: 16px;
+    color: #FFF;
+    margin: 0;
+}
+.movie-tv-shadow{
+    position: absolute;
+    width: 106%;
+    height: 263px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: -10px;
+}
+.movie-tv-rate{
+    font-size: 16px;
+}
+.movie-tv-rate span{
+    color: #FFF;
+}
+.movie-tv-rate i{
+    color: #ECB10C;
+    margin-right: 5px;
+}
+.movie-tv-preview{
+    visibility: hidden;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2,2,2,0.5);
+    z-index: 9;
+    text-align: center;
+}
+.movie-tv-preview a{
+    color: #FFF;
+    background-color: #4786CB;
+    margin: -10% auto 0 auto;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 50px;
+}
+.movie-tv-overlay:hover .movie-tv-preview{
+    visibility: visible;
+}
+.movie-tv-overlay:hover .movie-tv-preview a{
+    margin: 60% auto 0 auto;
+    -webkit-transition: 0.9s;
+    -moz-transition: 0.9s;
+    -ms-transition: 0.9s;
+    -o-transition: 0.9s;
+    transition: 0.9s;
+}
+.movie-tv-year{
+    font-size: 12px;
+    margin: 5px;
+    padding: 3px 8px;
+    display: inline-block;
+    background-color: #022441;
 }
 
 .products article .image a {
@@ -2369,10 +2487,11 @@ nav .cart-wrapper.open {
 
 @media (min-width: 768px) {
     .products article .image {
-        padding: 80px 0;
+        /*padding: 80px 0;*/
     }
 }
 
+/*
 .products article .btn-add {
     opacity: 0;
     -moz-transform: translate3d(100%, 0, 0);
@@ -2475,8 +2594,9 @@ nav .cart-wrapper.open {
     }
 }
 
+.products article .info a,
 .products article .info a:hover {
-    background-color: #000000;
+    background-color: #222;
     color: white;
 }
 
@@ -2534,6 +2654,7 @@ nav .cart-wrapper.open {
     -webkit-transition-delay: 0.3s;
     transition-delay: 0.3s;
 }
+*/
 
 .products article .figure-list {
     display: table;
@@ -2676,7 +2797,7 @@ nav .cart-wrapper.open {
 }
 
 .product .title {
-    color: black;
+    color: #022441;
     font-weight: 600;
     position: relative;
 }
@@ -2690,7 +2811,7 @@ nav .cart-wrapper.open {
     white-space: nowrap;
     left: -30%;
     top: -100%;
-    z-index: 1;
+    /*z-index: 1;*/
 }
 
 .product .title small {
@@ -2702,7 +2823,7 @@ nav .cart-wrapper.open {
 }
 
 .product .price {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .product .price small {
@@ -6559,7 +6680,7 @@ footer .footer-social li a {
   height: 40px;
   border-radius: 22px;
   display: inline-block;
-  background: rgba(0, 0, 0, 0.4);
+  background: #022441;/*rgba(0, 0, 0, 0.4);*/
   color: white;
   text-decoration: none;
   padding: 4px 46px 5px 20px;

@@ -24,59 +24,63 @@ block content
 								// price wrapper
 								div(class="price")
 									span(class="h3 mvyear2" data-year=release_date)
-										small(style="text-decoration:none;font-size:14px;")='Rate: '+vote_average+'/10'
+										small(style="text-decoration:none;font-size:15px;")
+											i(class="fa fa-star" style="color: #F5B40B;font-size: 20px;margin-right:4px;") 
+											span()=vote_average
 								
-								hr
+								// hr
 
 								// info-box
-								div(class="info-box")
+								div(class="info-box" style="display:none;")
 									span 
 										strong=tagline
 
-								hr
-
 								// info-box 
 								div(class="info-box")
-									span 
+									span(style="display:none;")
 										strong Genres
 									div(class="product-colors clearfix")
 										each val in genres
 											span(class="color-btn color-btn-biege" Style="width:auto;border-radius:10%;padding: 0 5px;margin-bottom:5px;")=val.name
 								
-								hr
+								// hr
 								
-								form(action="/trailer/"+tv_id+"/tv" method="GET" id="movie_trailer_form")
+								form(action="/trailer/"+tv_id+"/tv" method="GET" style="margin:10px 0;" id="movie_trailer_form")
 									button(type="submit" data-toggle="modal" data-target="#trailer-modal" class="btn-watch-video fancybox fancybox.iframe")
 										| Watch Trailer
-										i(class="fa fa-play")                            
-								hr
+										i(class="fa fa-play")
+
+								h1(class="title" style="font-size:17px;margin:20px 0;text-transform: uppercase;") Overview
+								p=overview
+
+								//hr
 								
-								span(class="movie-info")
+								//span(class="movie-info")
 									b="status: "
 									small=status
 
-								span(class="movie-info")
+								//span(class="movie-info")
 									b="original title: "
 									small=original_title
 
-								span(class="movie-info")
+								//span(class="movie-info")
 									b="released: "
 									small=release_date
 
-								span(class="movie-info")
+								//span(class="movie-info")
 									b="spoken languages: "
 									each lang in spoken_languages
 										span(class="badge badge-light")=lang.english_name
 
-								span(class="movie-info")
+								//span(class="movie-info")
 									b="number of seasons: "
 									small=seasons
 
-								span(class="movie-info")
+								//span(class="movie-info")
 									b="number of episodes: "
 									small=episodes
 
-								span(class="movie-info")
+								//span(class="movie-info")
 									b="website: "
 									a(href=homepage target="_blank") 
 										small(style="font-size:13px")=homepage
@@ -102,7 +106,7 @@ block content
 						ul(class="nav nav-tabs" role="tablist")
 							li(role="presentation" class="active")
 								a(href="#overview" aria-controls="overview" role="tab" data-toggle="tab")
-									span Overview
+									span Info
 
 						// tab-panes
 						div(class="tab-content")
@@ -110,9 +114,9 @@ block content
 							// tab #1
 							div(role="tabpanel" class="tab-pane active" id="overview")
 								div(class="content")
-									h3 The Summary
-									p=overview
-									hr
+									//h3 The Summary
+									//p=overview
+									//hr
 									h3="Cast & Crew"
 									div(class="crew-content text-center" data-id=tv_id data-type="tv")
 										// Cast and Crew
@@ -122,11 +126,11 @@ block content
 		div(class="modal" id="trailer-modal" tabindex="-1" role="dialog")
 			div(class="modal-dialog" role="document")
 				div(class="modal-content")
-					div(class="modal-header")
+					div(class="modal-header" style="background-color: #000;border:0;")
 						h5(class="modal-title") Trailers
 						button(type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-trailer")
 							span(aria-hidden="true") &times;
 					div(class="modal-body")
 						div(class="trailer-modal")
-					div(class="modal-footer")
-						button(type="button" class="btn btn-secondary" data-dismiss="modal" id="close-trailer") Close
+					div(class="modal-footer" style="background-color: transparent;border:0;")
+						button(type="button" class="btn btn-sm btn-warning" data-dismiss="modal" id="close-trailer") Close

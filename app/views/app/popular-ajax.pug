@@ -4,40 +4,40 @@ each val in data
         article(class="movie-tv-box")
             div(class="movie-tv-overlay")
                 div(class="movie-tv-preview")
-                    a(href="/preview/tv/"+val.id) Read More..
+                    a(href="/preview/movie/"+val.id) Read More..
                 img(src="/assets/images/shadow.png" class="movie-tv-shadow")
                 div(class="movie-tv-info")
-                    h2(class="movie-tv-title")=val.name
-                        span(class="movie-tv-year mvyear" data-year=val.first_air_date)
+                    h2(class="movie-tv-title")=val.title
+                        span(class="movie-tv-year mvyear" data-year=val.release_date)
                     span(class="movie-tv-rate")
                         i(class="fa fa-star")
                         span()=val.vote_average
                             small  /10
 
-            div(class="info" style="display:none")
+            div(class="info" style="display:none;")
                 span(class="add-favorite")
-                    a(href="javascript:void(0);" data-title="Add to favorites" data-title-added="Added to favorites list")
+                    a(href="/wishlist/"+val.id class="wishlist-btn" data-title="Add to favorites" data-title-added="Added to favorites list")
                         i(class="icon icon-heart")
                 span
-                    a(href="preview/tv/"+val.id class="mfp-open" data-title="Preview")
+                    a(href="preview/movie/"+val.id class="mfp-open" data-title="Preview")
                         i(class="icon icon-eye")
 
             div(class="figure-grid")
-                span(class="label label-danger" style="display:none")='Rate:  '+val.vote_average
+                span(class="label label-danger" style="display:none;")='Rate:  '+val.vote_average
                 div(class="image")
-                    a(href="/preview/tv/"+val.id class="mfp-open")
+                    a(href="/preview/movie/"+val.id class="mfp-open")
                         div(class="movie-poster" style='background-image:url('+'https://www.themoviedb.org/t/p/w500'+val.poster_path+')')
                         //img(src="https://www.themoviedb.org/t/p/w500"+val.poster_path alt="" width="360")
 
-                div(class="text" style="display:none")
+                div(class="text" style="display:none;")
                     h2(class="title h4")
-                        a(href="/preview/tv/"+val.id)=val.name
+                        a(href="preview"+"/"+val.id)=val.title
 
-                    sup(class="mvyear" data-year=val.first_air_date)    
+                    sup(class="mvyear" data-year=val.release_date)    
                     span(class="description clearfix")=val.overview
 
-
 script(src="/js/jquery.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js")
 script.
     $('.mvyear').each(function(){
         var year = $(this).attr('data-year');
@@ -52,3 +52,15 @@ script.
 
         return arr1[0];
     }
+
+    $(function(){
+        $('.wishlist-btn').on('click', function(e){
+            e.preventDefault();
+
+            var url = $(this).attr('href');
+
+            $.post(url, function(data) {
+                alert(data);
+            });
+        });
+    });

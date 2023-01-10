@@ -1,0 +1,123 @@
+extends layout/layout.pug
+
+block title
+    | Popular
+
+block content
+
+    // Section
+    section(class="main-header")
+        header
+            div(class="container")
+                h1(class="h2 title") Popular
+                ol(class="breadcrumb breadcrumb-inverted")
+                    li
+                        a(href="/")
+                            span(class="icon icon-home")
+                    li
+                        a(class="active" href="/popular") Popular Movies
+
+    // Products
+    form(action="/popular/api" method="GET" class="ajax-movies" style="width:100%")
+        section(class="products")
+            div(class="row row-clean")
+                // product-filters
+                div(class="col-md-3 col-xs-12")
+                    div(class="filters")
+
+                        // Search
+                        div(class="filter-box active")
+                            div(class="title") Search
+
+                            div(class="filter-content")
+                                span(class="checkbox")
+                                    input(class="form-control" name="search" placeholder="search movie")
+
+                        // Genre
+                        div(class="filter-box active")
+                            div(class="title") Genres
+                            div(class="filter-content")
+                                // Looping on genres
+                                each val in genre
+                                    span(class="checkbox")
+                                        input(type="checkbox" id="genre"+val.id name="genres[]" value=val.id)
+                                        label(for="genre"+val.id)=val.name
+                                            i='('+val.id+')'
+
+                        // Year
+                        div(class="filter-box active")
+                            div(class="title") Movie Year
+
+                            div(class="filter-content")
+                                span(class="checkbox")
+                                    select(class="form-control" name="year" class="movie-year") {
+                                        option(value="" selected) Year
+
+                        // close filters on mobile / update filters
+                        button(class="toggle-filters-close btn btn-main" type="submit" style="border-radius:0;") Update Search
+
+                // product items
+                div(class="col-md-9 col-xs-12")
+
+                    div(class="sort-bar clearfix")
+
+                        div(class="sort-results pull-left" style="margin:0 5px;")
+                            // Showing result per page
+                            select(class="movie-page" name="page")
+                                option(value="1" selected) - Pages -
+
+                            // Items counter
+                            // span Pages
+
+                        div(class="sort-results pull-left")
+                            form(action="/popular/api" method="GET" class="ajax-movies" style="margin:0 5px;")
+                                // Year options
+                                select(name="year" class="movie-year")
+                                    option(value="" selected) - Year -
+                                 
+                                // Items counter
+                                // span(style="margin:0 5px;") Year
+
+                        div(class="sort-options pull-right")
+                            // span(class="hidden-xs") Sort by
+                            // Sort options
+                            select(name="sort_by")
+                                option(value="popularity.desc" selected) - Sort by -
+                                option(value="popularity.asc") popularity asc
+                                option(value="popularity.desc") popularity desc
+                                option(value="release_date.asc") release date asc
+                                option(value="release_date.desc") release date desc
+                                option(value="revenue.asc") revenue asc
+                                option(value="revenue.desc") revenue desc
+                                option(value="primary_release_date.asc") primary release date asc
+                                option(value="primary_release_date.desc") primary release date desc
+                                option(value="original_title.asc") original title asc
+                                option(value="original_title.desc") original title desc
+                                option(value="vote_average.asc") vote average asc
+                                option(value="vote_average.desc") vote average desc
+                                option(value="vote_count.asc") vote count asc
+                                option(value="vote_count.desc") vote count desc
+
+                            // Grid-list view
+                            span(class="grid-list")
+                                //
+                                // a(href="products-grid.html")
+                                    i(class="fa fa-th-large")
+                                // a(href="products-list.html")
+                                    i(class="fa fa-align-justify")
+                                // a(href="javascript:void(0);" class="toggle-filters-mobile")
+                                    i(class="fa fa-search")
+
+                        div(class="sort-options pull-right" style="margin:0 5px;")
+                            form(action="/popular/api" method="GET" class="ajax-movies")
+                                // span(class="hidden-xs") Genre
+                                // Genre options
+                                select(name="genres")
+                                    option(value="" selected) - Genre -
+                                        each val in genre
+                                            option(id="genre"+val.id value=val.id)=val.name
+
+                    div(class="row row-clean api-movies-content" data-movie="/popular/api")
+                        // Get ajax content here
+
+            // Product info popup - quick view

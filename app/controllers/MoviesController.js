@@ -38,6 +38,57 @@ exports.tv = (req, res) =>
     });
 }
 
+exports.popular = (req, res) =>
+{
+    // Get movies genre
+    axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=e18d5fbe1b2cacaae460cad583eda96b&language=en-US')
+        .then(function (response) {
+            // handle success
+            res.render('app/popular', {genre: response.data.genres})
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .then(function () {
+        // always executed
+    });
+}
+
+exports.top = (req, res) =>
+{
+    // Get movies genre
+    axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=e18d5fbe1b2cacaae460cad583eda96b&language=en-US')
+        .then(function (response) {
+            // handle success
+            res.render('app/top', {genre: response.data.genres})
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .then(function () {
+        // always executed
+    });
+}
+
+exports.upcoming = (req, res) =>
+{
+    // Get movies genre
+    axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=e18d5fbe1b2cacaae460cad583eda96b&language=en-US')
+        .then(function (response) {
+            // handle success
+            res.render('app/upcoming', {genre: response.data.genres})
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .then(function () {
+        // always executed
+    });
+}
+
 exports.moviesApi = (req, res) =>
 {
     // Default Year (current year)
@@ -86,6 +137,180 @@ exports.moviesApi = (req, res) =>
         .then(function (response) {
             // handle success
             res.render('app/movies-ajax', {data: response.data.results});
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .then(function () {
+        // always executed
+    });
+}
+
+exports.popularApi = (req, res) =>
+{
+    // Default Year (current year)
+    var year = '';//new Date().getFullYear();
+    // Default Genre (all genres)
+    var genres = [28,12,16,35,80,99,18,10751,14,36,27,10402,9648,10749,878,10770,53,10752,37];
+    // Default Sorting
+    var sort_by = 'popularity.asc';
+    // Default Page
+    var page = 1;
+    // Default Search
+    var search = '';
+
+    if (typeof req.query.year !== 'undefined') {
+        year = req.query.year
+    }
+
+    if (typeof req.query.genres !== 'undefined') {
+        genres = req.query.genres
+    }
+
+    if (typeof req.query.sort_by !== 'undefined') {
+        sort_by = req.query.sort_by
+    }
+
+    if (typeof req.query.page !== 'undefined') {
+        page = req.query.page
+    }
+
+    if (typeof req.query.search !== 'undefined') {
+        search = req.query.search
+    }
+
+    // Convert genres array to string
+    genres = genres.toString();
+    genres = genres.split(',').join('|')
+
+    var url = 'https://api.themoviedb.org/3/movie/popular?api_key=e18d5fbe1b2cacaae460cad583eda96b&language=en-US&sort_by='+sort_by+'&with_genres='+genres+'&primary_release_year='+year+'&include_adult=false&adult=false&include_video=false&page='+page+'&with_watch_monetization_types=flatrate';
+
+    if (search !== '') 
+    {
+        var url = 'https://api.themoviedb.org/3/search/movie?api_key=e18d5fbe1b2cacaae460cad583eda96b&language=en-US&query='+search+'&page='+page+'&include_adult=false&adult=false'
+    }
+
+    axios.get(url)
+        .then(function (response) {
+            // handle success
+            res.render('app/popular-ajax', {data: response.data.results});
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .then(function () {
+        // always executed
+    });
+}
+
+exports.topApi = (req, res) =>
+{
+    // Default Year (current year)
+    var year = '';//new Date().getFullYear();
+    // Default Genre (all genres)
+    var genres = [28,12,16,35,80,99,18,10751,14,36,27,10402,9648,10749,878,10770,53,10752,37];
+    // Default Sorting
+    var sort_by = 'popularity.asc';
+    // Default Page
+    var page = 1;
+    // Default Search
+    var search = '';
+
+    if (typeof req.query.year !== 'undefined') {
+        year = req.query.year
+    }
+
+    if (typeof req.query.genres !== 'undefined') {
+        genres = req.query.genres
+    }
+
+    if (typeof req.query.sort_by !== 'undefined') {
+        sort_by = req.query.sort_by
+    }
+
+    if (typeof req.query.page !== 'undefined') {
+        page = req.query.page
+    }
+
+    if (typeof req.query.search !== 'undefined') {
+        search = req.query.search
+    }
+
+    // Convert genres array to string
+    genres = genres.toString();
+    genres = genres.split(',').join('|')
+
+    var url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=e18d5fbe1b2cacaae460cad583eda96b&language=en-US&sort_by='+sort_by+'&with_genres='+genres+'&primary_release_year='+year+'&include_adult=false&adult=false&include_video=false&page='+page+'&with_watch_monetization_types=flatrate';
+
+    if (search !== '') 
+    {
+        var url = 'https://api.themoviedb.org/3/search/movie?api_key=e18d5fbe1b2cacaae460cad583eda96b&language=en-US&query='+search+'&page='+page+'&include_adult=false&adult=false'
+    }
+
+    axios.get(url)
+        .then(function (response) {
+            // handle success
+            res.render('app/top-ajax', {data: response.data.results});
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .then(function () {
+        // always executed
+    });
+}
+
+exports.upcomingApi = (req, res) =>
+{
+    // Default Year (current year)
+    var year = new Date().getFullYear();
+    // Default Genre (all genres)
+    var genres = [28,12,16,35,80,99,18,10751,14,36,27,10402,9648,10749,878,10770,53,10752,37];
+    // Default Sorting
+    var sort_by = 'popularity.desc';
+    // Default Page
+    var page = 1;
+    // Default Search
+    var search = '';
+
+    if (typeof req.query.year !== 'undefined') {
+        year = req.query.year
+    }
+
+    if (typeof req.query.genres !== 'undefined') {
+        genres = req.query.genres
+    }
+
+    if (typeof req.query.sort_by !== 'undefined') {
+        sort_by = req.query.sort_by
+    }
+
+    if (typeof req.query.page !== 'undefined') {
+        page = req.query.page
+    }
+
+    if (typeof req.query.search !== 'undefined') {
+        search = req.query.search
+    }
+
+    // Convert genres array to string
+    genres = genres.toString();
+    genres = genres.split(',').join('|')
+
+    var url = 'https://api.themoviedb.org/3/movie/upcoming?api_key=e18d5fbe1b2cacaae460cad583eda96b&language=en-US&sort_by='+sort_by+'&with_genres='+genres+'&primary_release_year='+year+'&include_adult=false&adult=false&include_video=false&page='+page+'&with_watch_monetization_types=flatrate';
+
+    if (search !== '') 
+    {
+        var url = 'https://api.themoviedb.org/3/search/movie?api_key=e18d5fbe1b2cacaae460cad583eda96b&language=en-US&query='+search+'&page='+page+'&include_adult=false&adult=false'
+    }
+
+    axios.get(url)
+        .then(function (response) {
+            // handle success
+            res.render('app/upcoming-ajax', {data: response.data.results});
         })
         .catch(function (error) {
             // handle error

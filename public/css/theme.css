@@ -4032,6 +4032,17 @@ nav .cart-wrapper.open {
     }
 }
 
+
+.owl-product-gallery img {
+    width: auto !important;
+}
+
+@media screen and (max-width: 992px){
+    .owl-product-gallery img {
+        width: 100% !important;
+    }
+}
+
 /*  
     ----------------------------------
     25. Comments

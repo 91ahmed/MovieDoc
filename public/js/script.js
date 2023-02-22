@@ -157,3 +157,19 @@ $(function(){
         $('.menu-overlay').fadeOut();
     });
 });
+
+// Retro Notify
+$(function(){
+    if (window.sessionStorage.length = 0)
+    {
+        new RetroNotify({
+            contentHeader: 'Note'
+            contentText: 'The data displayed on this site comes from different API sources, the website do not have full control over it, you may find inappropriate movie posters.',
+            fixed: true
+        });
+    }
+
+    $('.retro-notify-close').on('click', function (){
+        window.sessionStorage.setItem("note", "1");
+    });
+});

@@ -1,6 +1,3 @@
-const Mysql      = require('../../lib/database/mysql')
-const PostgreSql = require('../../lib/database/postgresql')
-const Mongo      = require('../../lib/database/mongodb')
 const Validator  = require('../../lib/validator/validator')
 const axios      = require('axios')
 

@@ -160,16 +160,19 @@ $(function(){
 
 // Retro Notify
 $(function(){
-    if (window.sessionStorage.length = 0)
+
+    if (sessionStorage.getItem("note") === null)
     {
         new RetroNotify({
-            contentHeader: 'Note'
-            contentText: 'The data displayed on this site comes from different API sources, the website do not have full control over it, you may find inappropriate movie posters.',
-            fixed: true
+            contentHeader: 'Note',
+            contentText: 'The data displayed on this site comes from different API sources, the website does not have compelte control over it, you may find inappropriate movies posters.',
+            closeDelay: 100000,
+            style: 'sky',
+            animate: 'slideTopRight'
         });
     }
 
     $('.retro-notify-close').on('click', function (){
-        window.sessionStorage.setItem("note", "1");
+        sessionStorage.setItem("note", "1");
     });
 });

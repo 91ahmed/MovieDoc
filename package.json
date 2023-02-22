@@ -14,12 +14,8 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "express-validator": "^6.8.0",
-    "mongodb": "^3.5.9",
-    "mysql": "^2.18.1",
-    "pg": "^8.3.0",
     "pug": "^3.0.0",
-    "session-file-store": "^1.4.0",
-    "socket.io": "^3.0.4"
+    "session-file-store": "^1.4.0"
   },
   "engines": {
     "node": "16.14.0"

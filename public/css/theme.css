@@ -1,13 +1,14 @@
 ﻿@charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@1000&display=swap');
 
 * {
     outline: none;
 }
 /*#022441*/
 body {
-    background-color: #cfcfcf;
+    background-color: #FFFEFE;/*#F0F7FB !important;*/
     font-family: "Open Sans", sans-serif;
     font-size: 13px;
     line-height: 1.4;
@@ -25,7 +26,7 @@ body .wrapper {
     position: relative;
     width: 100%;
     margin: 0 auto;
-    background-color: white;
+    background-color: #FFFEFE !important;
 }
 
 @media (min-width: 1366px) {
@@ -453,24 +454,24 @@ select {
     padding: 0;
     margin-top: 15px;
     padding-top: 15px;
-    border-top: 1px solid rgba(224, 224, 224, 0.3);
+    border-top: 1px solid #E6ECF1;
 }
 
 .breadcrumb.breadcrumb-inverted > li {
-    color: white;
+    color: #2C3648;
 }
 
 .breadcrumb.breadcrumb-inverted > li > a {
-    color: white;
+    color: #2C3648;
 }
 
 .breadcrumb > li.active,
 .breadcrumb > li.active a {
-    color: white;
+    color: #2C3648;
 }
 
 .breadcrumb > li a.active {
-    color: rgba(255, 255, 255, 0.5);
+    color: #2C3648;
 }
 
 /*  
@@ -662,7 +663,7 @@ header .text p:last-child {
     ----------------------------------
 */
 .main-header header, .main-header .title {
-    color: white;
+    color: #2C3648;
 }
 
 .main-header .container {
@@ -676,9 +677,10 @@ header .text p:last-child {
 .main-header header {
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: #022441;/*#3a3a3a;/*#787878;*/
+    background-color: #FFFEFE;/*#022441;*/
     background-size: cover;
     background-position: center;
+    border-bottom: 1px solid #E6ECF1;
 }
 
 .main-header header:before {
@@ -755,7 +757,7 @@ nav.navbar-sticked .navigation-top > ul {
 }
 
 nav.navbar-sticked .navigation-main {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 15px rgb(0 0 0 / 7%);
 }
 
 nav .container,
@@ -773,14 +775,14 @@ nav .logo {
     z-index: 10;
 }
 nav .logo span{
-    font-weight: 800;
-    font-size: 25px;
+    font-weight: 1000 !important;
+    font-size: 26px;
     line-height: 77px;
-    color: #022441;
-    font-family: 'Fredoka One', cursive;
+    color: #23293B !important;
+    font-family: 'Nunito', sans-serif !important;
 }
 nav .logo span i{
-    color: #4786CB;/*#21C8F5;*/
+    color: #388BF3;/*#21C8F5;*/
     font-style: normal !important;
 }
 
@@ -1128,7 +1130,7 @@ nav .navigation-main .navbar-dropdown .navbar-box ul > li:last-child > a {
 
 @media (max-width: 991px) {
     nav {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 3px 15px rgb(0 0 0 / 7%);
     }
     nav.navbar-fixed {
         position: absolute;
@@ -1945,7 +1947,7 @@ nav .cart-wrapper.open {
 */
 .sort-bar {
     border-bottom: 1px solid #e0e0e0;
-    background-color: #eeeeee;
+    background-color: #FFFEFE;
     font-size: 14px;
 }
 
@@ -2109,7 +2111,7 @@ nav .cart-wrapper.open {
     ----------------------------------
 */
 .filters {
-    background-color: #eeeeee;
+    background-color: #FFFEFE !important;
 }
 
 .filters .filter-box {
@@ -2166,7 +2168,7 @@ nav .cart-wrapper.open {
 .filters .filter-content {
     display: none;
     padding: 10px;
-    background-color: #f6f6f6;
+    background-color: #FFFEFE;
 }
 
 .filters .filter-content .checkbox label {
@@ -2309,7 +2311,7 @@ nav .cart-wrapper.open {
         -o-transform: translate3d(0, 0, 0);
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 3px 15px rgb(0 0 0 / 7%);
     }
     .filters .toggle-filters-close {
         -moz-border-radius: 0;
@@ -2912,7 +2914,7 @@ nav .cart-wrapper.open {
 }
 
 .product .info {
-    background-color: #e2e2e2;
+    background-color: #F0F7FB;
     padding: 20px 0;
     z-index: 1;
 }
@@ -4011,7 +4013,7 @@ nav .cart-wrapper.open {
 }
 
 .nav-tabs > li.active > a {
-    background: #e2e2e2;
+    background: #F0F7FB;
     color: #000;
     box-shadow: 0 -5px 0px #2e73bb;
     border: none;
@@ -6256,7 +6258,7 @@ footer {
     background-repeat: no-repeat;
     position: relative;
     color: #666666;
-    background-color: #f1f1f1;
+    background-color: #FFFEFE;
     padding: 15px !important;
     font-size: 85%;
 }

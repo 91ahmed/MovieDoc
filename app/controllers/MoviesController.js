@@ -402,7 +402,7 @@ exports.previewMovie = (req, res) =>
             
             var tagline = response.data.tagline;
             var runtime = response.data.runtime;
-            var vote_average = response.data.vote_average;
+            var vote_average = response.data.vote_average.toFixed(1);
             var homepage = response.data.homepage;
             
             if(response.data.spoken_languages != null){
@@ -470,7 +470,7 @@ exports.previewTv = (req, res) =>
             
             var tagline = response.data.tagline;
             var runtime = response.data.runtime;
-            var vote_average = response.data.vote_average;
+            var vote_average = response.data.vote_average.toFixed(1);
             var homepage = response.data.homepage;
             
             if(response.data.spoken_languages != null){

@@ -166,8 +166,9 @@ $(function(){
         new RetroNotify({
             contentHeader: 'Note',
             contentText: 'The data displayed on this site comes from different API sources, the website does not have compelte control over it, you may find inappropriate movies posters.',
+            openDelay: 8000,
             closeDelay: 100000,
-            style: 'black',
+            style: 'white',
             animate: 'slideTopRight'
         });
     }

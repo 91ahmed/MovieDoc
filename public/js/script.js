@@ -167,7 +167,7 @@ $(function(){
             contentHeader: 'Note',
             contentText: 'The data displayed on this site comes from different API sources, the website does not have compelte control over it, you may find inappropriate movies posters.',
             closeDelay: 100000,
-            style: 'sky',
+            style: 'black',
             animate: 'slideTopRight'
         });
     }

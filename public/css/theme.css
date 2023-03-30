@@ -787,7 +787,7 @@ nav .logo span i{
 }
 
 nav .logo img {
-    height: 55px;
+    width: 95px !important;
 }
 
 @media (max-width: 992px) {
@@ -6783,7 +6783,7 @@ button{
 
 
 .logo img{
-	margin-top: 25px;
+	margin-top: 17px;
     width: 155px !important;
 }
 
@@ -6796,11 +6796,14 @@ button{
         display:block !important;
     } 
 	.logo img{
-		margin-top: 16px;
+		margin-top: 12px;
 		margin-left: 5px;
-		width: 110px !important;
+		width: 40px !important;
 		height: auto !important;
 	}
+    nav .logo img{
+        width: 80px !important;
+    }
 }
 
 /* Responsive side menu */

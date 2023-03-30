@@ -91,7 +91,7 @@ exports.moviesApi = (req, res) =>
     // Default Year (current year)
     var year = new Date().getFullYear();
     // Default Genre (all genres)
-    var genres = [28,12,16,35,80,99,18,10751,14,36,27,10402,9648,10749,878,10770,53,10752,37];
+    var genres = [12,10751,16,10752]//[28,12,16,35,80,18,10751,14,36,27,10402,9648,10749,878,10770,53,10752,37];
     // Default Sorting
     var sort_by = 'popularity.desc';
     // Default Page

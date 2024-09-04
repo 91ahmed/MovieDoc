@@ -787,7 +787,7 @@ nav .logo span i{
 }
 
 nav .logo img {
-    width: 95px !important;
+    width: 175px !important;
 }
 
 @media (max-width: 992px) {
@@ -6783,7 +6783,7 @@ button{
 
 
 .logo img{
-	margin-top: 17px;
+	margin-top: 14px;
     width: 155px !important;
 }
 

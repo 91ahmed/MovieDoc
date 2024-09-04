@@ -6797,12 +6797,12 @@ button{
     } 
 	.logo img{
 		margin-top: 12px;
-		margin-left: 5px;
+		margin-left: 10px;
 		width: 40px !important;
 		height: auto !important;
 	}
     nav .logo img{
-        width: 80px !important;
+        width: 120px !important;
     }
 }
 

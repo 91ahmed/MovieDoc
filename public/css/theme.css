@@ -1521,6 +1521,9 @@ nav .search-wrapper .btn {
         left: 0;
         right: 0;
     }
+    nav {
+    	height: 75px !important; /** Hi Remove **/
+    }
 }
 
 nav .login-wrapper {

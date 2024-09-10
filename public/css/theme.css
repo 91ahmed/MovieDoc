@@ -1131,6 +1131,7 @@ nav .navigation-main .navbar-dropdown .navbar-box ul > li:last-child > a {
 @media (max-width: 991px) {
     nav {
         box-shadow: 0 3px 15px rgb(0 0 0 / 7%);
+        height: 50px; /** Hi remove **/
     }
     nav.navbar-fixed {
         position: absolute;
@@ -1142,7 +1143,7 @@ nav .navigation-main .navbar-dropdown .navbar-box ul > li:last-child > a {
         width: 100%;
     }
     nav .navigation-main {
-        height: 55px;
+        height: 75px; /** Hi 55px **/
     }
     nav .navigation-main .open-cart,
     nav .navigation-main .open-login,
@@ -1168,7 +1169,7 @@ nav .navigation-main .navbar-dropdown .navbar-box ul > li:last-child > a {
     nav .navigation-main .open-search .icon,
     nav .navigation-main .open-menu .icon {
         font-size: 15px;
-        line-height: 58px;
+        line-height: 75px; /** Hi 58px **/
     }
     nav .navigation-main .open-login {
         right: 40px;
@@ -6802,7 +6803,7 @@ button{
 		height: auto !important;
 	}
     nav .logo img{
-        width: 120px !important;
+        width: 170px !important; /** Hi 120px **/
     }
 }
 

@@ -6869,6 +6869,11 @@ input, select{
 
 /* HTML: <div class="loader"></div> */
 .loader-circle {
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    transform: scale(0.6);
   width: 120px;
   height: 60px;
   padding: 10px;

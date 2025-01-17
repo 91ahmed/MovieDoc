@@ -6868,6 +6868,7 @@ input, select{
 
 
 /* HTML: <div class="loader"></div> */
+/*
 .loader-circle {
     -webkit-transform: scale(0.6);
     -moz-transform: scale(0.6);
@@ -6904,4 +6905,37 @@ input, select{
 }
 @keyframes l3{
   90%,100% {transform: translate(calc(var(--s,1)*30px))}
+}
+*/
+/* HTML: <div class="loader"></div> */
+.loader-circle {
+  width: 45px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid #0000;
+  border-right-color: #4986CA;/*#ffa50097*/
+  position: relative;
+  animation: l24 1s infinite linear;
+
+    margin: auto;
+    top: 40%;
+    left: 0;
+    right: 0;
+    opacity: 0.9;
+}
+.loader-circle:before,
+.loader-circle:after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: inherit;
+  animation: inherit;
+  animation-duration: 2s;
+}
+.loader-circle:after {
+  animation-duration: 4s;
+}
+@keyframes l24 {
+  100% {transform: rotate(1turn)}
 }

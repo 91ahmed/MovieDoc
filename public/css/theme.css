@@ -6868,52 +6868,12 @@ input, select{
 
 
 /* HTML: <div class="loader"></div> */
-/*
-.loader-circle {
-    -webkit-transform: scale(0.6);
-    -moz-transform: scale(0.6);
-    -o-transform: scale(0.6);
-    -ms-transform: scale(0.6);
-    transform: scale(0.6);
-  width: 120px;
-  height: 60px;
-  padding: 10px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  background: #fff;
-  filter: blur(5px) contrast(10) hue-rotate(250deg);
-  mix-blend-mode: darken;
-
-
-    margin: auto;
-    top: 40%;
-    position: relative;
-    left: 0;
-    right: 0;
-}
-.loader-circle:before,
-.loader-circle:after {
-  content: "";
-  width: 40px;
-  border-radius: 50%;
-  background: #ff00ff;
-  animation: l3 1s infinite alternate;
-}
-.loader-circle:after {
-  --s:-1;
-}
-@keyframes l3{
-  90%,100% {transform: translate(calc(var(--s,1)*30px))}
-}
-*/
-/* HTML: <div class="loader"></div> */
-.loader-circle {
+/*.loader-circle {
   width: 45px;
   aspect-ratio: 1;
   border-radius: 50%;
   border: 8px solid #0000;
-  border-right-color: #4986CA;/*#ffa50097*/
+  border-right-color: #4986CA;
   position: relative;
   animation: l24 1s infinite linear;
 
@@ -6938,4 +6898,27 @@ input, select{
 }
 @keyframes l24 {
   100% {transform: rotate(1turn)}
+}*/
+
+
+/* HTML: <div class="loader"></div> */
+.loader-circle {
+  width: 50px;
+  aspect-ratio: 1;
+  --_c:no-repeat radial-gradient(farthest-side,#4986CA 92%,#0000);
+  background: 
+    var(--_c) top,
+    var(--_c) left,
+    var(--_c) right,
+    var(--_c) bottom;
+  background-size: 12px 12px;
+  animation: l7 1s infinite;
+
+    margin: auto;
+    position: relative;
+    top: 40%;
+    left: 0;
+    right: 0;
+    opacity: 0.9;
 }
+@keyframes l7 {to{transform: rotate(.5turn)}}
